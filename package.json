@@ -1,0 +1,22 @@
+{
+  "name": "whxy2018",
+  "version": "1.0.0",
+  "description": "To celebrate the 20th anniversary of the founding of WHXY",
+  "repository": "https://github.com/neoxen/whxy2018",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html",
+    "build": "parcel build index.js"
+  },
+  "keywords": [],
+  "author": "Neo Chen",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.4.1"
+  },
+  "dependencies": {
+    "echarts": "^3.8.5",
+    "jquery": "^3.2.1"
+  }
+}
