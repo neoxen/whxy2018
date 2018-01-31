@@ -1,4 +1,6 @@
-var echarts = require('echarts');
+// var echarts = require('echarts');
+
+// require("echarts/map/js/china");
 
 function chinaMapV2(arr) {
 
@@ -10,7 +12,7 @@ function chinaMapV2(arr) {
         color: ['gold','aqua','lime'],
         title : {
             text: '武汉信用——辉煌二十年',
-            // subtext:'数据纯属虚构',
+            subtext:'1998',
             x:'center',
             textStyle : {
                 color: '#FF0000'
@@ -54,6 +56,41 @@ function chinaMapV2(arr) {
             }
         },
         series : [
+            {
+                name: '武汉 Top10',
+                type: 'effectScatter',
+                coordinateSystem: 'geo',
+                zlevel: 2,
+                rippleEffect: {
+                    brushType: 'stroke'
+                },
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'right',
+                        formatter: '{b}'
+                    }
+                },
+                symbolSize: function (val) {
+                    return val[2] / 8;
+                },
+                itemStyle: {
+                    normal: {
+                        color: '#fff'
+                    }
+                },
+                data : [
+                    {name:'武汉',value:100},
+                    {name:'上海',value:60},
+                    {name:'宜昌',value:70},
+                    {name:'北京',value:60},
+                    {name:'大连',value:30},
+                    {name:'深圳',value:80},
+                    {name:'南昌',value:60},
+                    {name:'重庆',value:50},
+                    {name:'香港',value:10}
+                ]
+            },
             {
                 name: '全国',
                 type: 'map',
@@ -237,6 +274,13 @@ function chinaMapV2(arr) {
                 type: 'map',
                 mapType: 'china',
                 data:[],
+                label: {
+                    normal: {
+                        show: true,
+                        position: 'right',
+                        formatter: '{b}'
+                    }
+                },
                 markLine : {
                     smooth:true,
                     effect : {
@@ -252,22 +296,36 @@ function chinaMapV2(arr) {
                             lineStyle: {
                                 type: 'solid',
                                 shadowBlur: 10
-                            }
+                            },
+                            label: {
+                                normal: {
+                                    show: true,
+                                    position: 'right',
+                                    formatter: '{b}'
+                                }
+                            },
                         }
                     },
                     data : [
-                        [{name:'武汉'}, {name:'上海',value:95}],
-                        [{name:'武汉'}, {name:'宜昌',value:95}],
-                        [{name:'武汉'}, {name:'北京',value:90}],
-                        [{name:'武汉'}, {name:'大连',value:80}],
-                        [{name:'武汉'}, {name:'深圳',value:70}],
-                        [{name:'武汉'}, {name:'南昌',value:60}],
-                        [{name:'武汉'}, {name:'重庆',value:20}],
-                        [{name:'武汉'}, {name:'香港',value:10}]
+                        [{name:'武汉'}, {name:'上海'}],
+                        [{name:'武汉'}, {name:'宜昌'}],
+                        [{name:'武汉'}, {name:'北京'}],
+                        [{name:'武汉'}, {name:'大连'}],
+                        [{name:'武汉'}, {name:'深圳'}],
+                        [{name:'武汉'}, {name:'南昌'}],
+                        [{name:'武汉'}, {name:'重庆'}],
+                        [{name:'武汉'}, {name:'香港'}]
                     ]
                 },
                 markPoint : {
                     symbol:'emptyCircle',
+                    label: {
+                        normal: {
+                            show: true,
+                            position: 'right',
+                            formatter: '{b}'
+                        }
+                    },
                     symbolSize : function (v){
                         return 10 + v/10
                     },
@@ -277,14 +335,22 @@ function chinaMapV2(arr) {
                     },
                     itemStyle:{
                         normal:{
-                            label:{show:true}
+                            label:{
+                                show:true,
+                                formatter: '{b}'
+                            }
                         },
                         emphasis: {
-                            label:{position:'top'}
+                            label:{
+                                position:'top',
+                                show:true,
+                                formatter: '{b}'
+                            }
                         }
                     },
                     data : [
-                        {name:'上海',value:60,label:"上海"},
+                        {name:'武汉',value:100},
+                        {name:'上海',value:60},
                         {name:'宜昌',value:70},
                         {name:'北京',value:60},
                         {name:'大连',value:30},

@@ -4,6 +4,12 @@
 
 function affiliateV3(arr) {
 
+    // import '../css/styles.scss';
+//
+// const affiliateV3 = require('./affiliateV3').affiliateV3;
+//
+// affiliateV3('container');
+
     var dom = document.getElementById(arr);
     var myChart = echarts.init(dom);
     var app = {};
@@ -124,33 +130,241 @@ function affiliateV3(arr) {
         '长治': [112.8625,36.4746],
         '阳泉': [113.4778,38.0951],
         '青岛': [120.4651,36.3373],
-        '韶关': [113.7964,24.7028]
+        '韶关': [113.7964,24.7028],
+        '香港': [114.2784,22.3057]
     };
 
-    var BJData = [
+    var Data2000 = [
         [{name:'武汉'}, {name:'武汉',value:100}]
     ];
 
-    var SHData = [
+    var Data2010 = [
+        [{name:'武汉'}, {name:'武汉',value:100}],
+        [{name:'武汉'}, {name:'南昌',value:40}],
+        [{name:'武汉'}, {name:'宜昌',value:40}],
+        [{name:'宜昌'}, {name:'南昌',value:40}],
+        [{name:'南昌'}, {name:'宜昌',value:40}]
+    ];
+
+    var Data2012 = [
+        [{name:'武汉'}, {name:'武汉',value:100}],
+        [{name:'武汉'}, {name:'南昌',value:40}],
+        [{name:'武汉'}, {name:'宜昌',value:40}],
+        [{name:'武汉'}, {name:'北京',value:40}],
+        [{name:'武汉'}, {name:'深圳',value:40}],
+
+        [{name:'南昌'}, {name:'武汉',value:100}],
+        [{name:'南昌'}, {name:'南昌',value:40}],
+        [{name:'南昌'}, {name:'宜昌',value:40}],
+        [{name:'南昌'}, {name:'北京',value:40}],
+        [{name:'南昌'}, {name:'深圳',value:40}],
+
+        [{name:'宜昌'}, {name:'武汉',value:100}],
+        [{name:'宜昌'}, {name:'南昌',value:40}],
+        [{name:'宜昌'}, {name:'宜昌',value:40}],
+        [{name:'宜昌'}, {name:'北京',value:40}],
+        [{name:'宜昌'}, {name:'深圳',value:40}],
+
+        [{name:'北京'}, {name:'武汉',value:100}],
+        [{name:'北京'}, {name:'南昌',value:40}],
+        [{name:'北京'}, {name:'宜昌',value:40}],
+        [{name:'北京'}, {name:'北京',value:40}],
+        [{name:'北京'}, {name:'深圳',value:40}],
+
+        [{name:'深圳'}, {name:'武汉',value:100}],
+        [{name:'深圳'}, {name:'南昌',value:40}],
+        [{name:'深圳'}, {name:'宜昌',value:40}],
+        [{name:'深圳'}, {name:'北京',value:40}],
+        [{name:'深圳'}, {name:'深圳',value:40}]
+    ];
+
+    var Data2013 = [
+        [{name:'武汉'}, {name:'武汉',value:100}],
+        [{name:'武汉'}, {name:'南昌',value:40}],
+        [{name:'武汉'}, {name:'宜昌',value:40}],
+        [{name:'武汉'}, {name:'北京',value:40}],
+        [{name:'武汉'}, {name:'深圳',value:40}],
+        [{name:'武汉'}, {name:'重庆',value:40}],
+
+        [{name:'南昌'}, {name:'武汉',value:100}],
+        [{name:'南昌'}, {name:'南昌',value:40}],
+        [{name:'南昌'}, {name:'宜昌',value:40}],
+        [{name:'南昌'}, {name:'北京',value:40}],
+        [{name:'南昌'}, {name:'深圳',value:40}],
+        [{name:'南昌'}, {name:'重庆',value:40}],
+
+        [{name:'宜昌'}, {name:'武汉',value:100}],
+        [{name:'宜昌'}, {name:'南昌',value:40}],
+        [{name:'宜昌'}, {name:'宜昌',value:40}],
+        [{name:'宜昌'}, {name:'北京',value:40}],
+        [{name:'宜昌'}, {name:'深圳',value:40}],
+        [{name:'宜昌'}, {name:'重庆',value:40}],
+
+        [{name:'北京'}, {name:'武汉',value:100}],
+        [{name:'北京'}, {name:'南昌',value:40}],
+        [{name:'北京'}, {name:'宜昌',value:40}],
+        [{name:'北京'}, {name:'北京',value:40}],
+        [{name:'北京'}, {name:'深圳',value:40}],
+        [{name:'北京'}, {name:'重庆',value:40}],
+
+        [{name:'深圳'}, {name:'武汉',value:100}],
+        [{name:'深圳'}, {name:'南昌',value:40}],
+        [{name:'深圳'}, {name:'宜昌',value:40}],
+        [{name:'深圳'}, {name:'北京',value:40}],
+        [{name:'深圳'}, {name:'深圳',value:40}],
+        [{name:'深圳'}, {name:'重庆',value:40}],
+
+        [{name:'重庆'}, {name:'武汉',value:100}],
+        [{name:'重庆'}, {name:'南昌',value:40}],
+        [{name:'重庆'}, {name:'宜昌',value:40}],
+        [{name:'重庆'}, {name:'北京',value:40}],
+        [{name:'重庆'}, {name:'深圳',value:40}],
+        [{name:'重庆'}, {name:'重庆',value:40}]
+    ];
+
+    var Data2014 = [
+        [{name:'武汉'}, {name:'武汉',value:100}],
+        [{name:'武汉'}, {name:'南昌',value:40}],
+        [{name:'武汉'}, {name:'宜昌',value:40}],
+        [{name:'武汉'}, {name:'北京',value:40}],
+        [{name:'武汉'}, {name:'深圳',value:40}],
+        [{name:'武汉'}, {name:'重庆',value:40}],
+        [{name:'武汉'}, {name:'上海',value:40}],
+
+        [{name:'南昌'}, {name:'武汉',value:100}],
+        [{name:'南昌'}, {name:'南昌',value:40}],
+        [{name:'南昌'}, {name:'宜昌',value:40}],
+        [{name:'南昌'}, {name:'北京',value:40}],
+        [{name:'南昌'}, {name:'深圳',value:40}],
+        [{name:'南昌'}, {name:'重庆',value:40}],
+        [{name:'南昌'}, {name:'上海',value:40}],
+
+        [{name:'宜昌'}, {name:'武汉',value:100}],
+        [{name:'宜昌'}, {name:'南昌',value:40}],
+        [{name:'宜昌'}, {name:'宜昌',value:40}],
+        [{name:'宜昌'}, {name:'北京',value:40}],
+        [{name:'宜昌'}, {name:'深圳',value:40}],
+        [{name:'宜昌'}, {name:'重庆',value:40}],
+        [{name:'宜昌'}, {name:'上海',value:40}],
+
+        [{name:'北京'}, {name:'武汉',value:100}],
+        [{name:'北京'}, {name:'南昌',value:40}],
+        [{name:'北京'}, {name:'宜昌',value:40}],
+        [{name:'北京'}, {name:'北京',value:40}],
+        [{name:'北京'}, {name:'深圳',value:40}],
+        [{name:'北京'}, {name:'重庆',value:40}],
+        [{name:'北京'}, {name:'上海',value:40}],
+
+        [{name:'深圳'}, {name:'武汉',value:100}],
+        [{name:'深圳'}, {name:'南昌',value:40}],
+        [{name:'深圳'}, {name:'宜昌',value:40}],
+        [{name:'深圳'}, {name:'北京',value:40}],
+        [{name:'深圳'}, {name:'深圳',value:40}],
+        [{name:'深圳'}, {name:'重庆',value:40}],
+        [{name:'深圳'}, {name:'上海',value:40}],
+
+        [{name:'重庆'}, {name:'武汉',value:100}],
+        [{name:'重庆'}, {name:'南昌',value:40}],
+        [{name:'重庆'}, {name:'宜昌',value:40}],
+        [{name:'重庆'}, {name:'北京',value:40}],
+        [{name:'重庆'}, {name:'深圳',value:40}],
+        [{name:'重庆'}, {name:'重庆',value:40}],
+        [{name:'重庆'}, {name:'上海',value:40}],
+
+        [{name:'上海'}, {name:'武汉',value:100}],
+        [{name:'上海'}, {name:'南昌',value:40}],
+        [{name:'上海'}, {name:'宜昌',value:40}],
+        [{name:'上海'}, {name:'北京',value:40}],
+        [{name:'上海'}, {name:'深圳',value:40}],
+        [{name:'上海'}, {name:'重庆',value:40}],
+        [{name:'上海'}, {name:'上海',value:40}]
+    ];
+
+    var Data2017 = [
         [{name:'武汉'}, {name:'武汉',value:100}],
         [{name:'武汉'}, {name:'上海',value:40}],
+        [{name:'武汉'}, {name:'深圳',value:100}],
         [{name:'武汉'}, {name:'北京',value:40}],
         [{name:'武汉'}, {name:'宜昌',value:40}],
         [{name:'武汉'}, {name:'南昌',value:40}],
-        [{name:'武汉'}, {name:'重庆',value:40}]
+        [{name:'武汉'}, {name:'重庆',value:40}],
+        [{name:'武汉'}, {name:'合肥'}],
+        [{name:'武汉'}, {name:'郑州'}],
+        [{name:'武汉'}, {name:'长沙'}],
+
+        [{name:'上海'}, {name:'武汉',value:100}],
+        [{name:'上海'}, {name:'上海',value:40}],
+        [{name:'上海'}, {name:'深圳',value:100}],
+        [{name:'上海'}, {name:'北京',value:40}],
+        [{name:'上海'}, {name:'宜昌',value:40}],
+        [{name:'上海'}, {name:'南昌',value:40}],
+        [{name:'上海'}, {name:'重庆',value:40}],
+        [{name:'上海'}, {name:'杭州'}],
+        [{name:'上海'}, {name:'南京'}],
+
+        [{name:'北京'}, {name:'武汉',value:100}],
+        [{name:'北京'}, {name:'上海',value:40}],
+        [{name:'北京'}, {name:'深圳',value:100}],
+        [{name:'北京'}, {name:'北京',value:40}],
+        [{name:'北京'}, {name:'宜昌',value:40}],
+        [{name:'北京'}, {name:'南昌',value:40}],
+        [{name:'北京'}, {name:'重庆',value:40}],
+        [{name:'北京'}, {name:'呼和浩特'}],
+        [{name:'北京'}, {name:'哈尔滨'}],
+        [{name:'北京'}, {name:'长春'}],
+        [{name:'北京'}, {name:'石家庄'}],
+        [{name:'北京'}, {name:'济南'}],
+        [{name:'北京'}, {name:'大连'}],
+        [{name:'北京'}, {name:'沈阳'}],
+
+        [{name:'宜昌'}, {name:'武汉',value:100}],
+        [{name:'宜昌'}, {name:'上海',value:40}],
+        [{name:'宜昌'}, {name:'深圳',value:100}],
+        [{name:'宜昌'}, {name:'北京',value:40}],
+        [{name:'宜昌'}, {name:'宜昌',value:40}],
+        [{name:'宜昌'}, {name:'南昌',value:40}],
+        [{name:'宜昌'}, {name:'重庆',value:40}],
+
+        [{name:'南昌'}, {name:'武汉',value:100}],
+        [{name:'南昌'}, {name:'上海',value:40}],
+        [{name:'南昌'}, {name:'深圳',value:100}],
+        [{name:'南昌'}, {name:'北京',value:40}],
+        [{name:'南昌'}, {name:'宜昌',value:40}],
+        [{name:'南昌'}, {name:'南昌',value:40}],
+        [{name:'南昌'}, {name:'重庆',value:40}],
+
+        [{name:'重庆'}, {name:'武汉',value:100}],
+        [{name:'重庆'}, {name:'上海',value:40}],
+        [{name:'重庆'}, {name:'深圳',value:100}],
+        [{name:'重庆'}, {name:'北京',value:40}],
+        [{name:'重庆'}, {name:'宜昌',value:40}],
+        [{name:'重庆'}, {name:'南昌',value:40}],
+        [{name:'重庆'}, {name:'重庆',value:40}],
+        [{name:'重庆'}, {name:'乌鲁木齐'}],
+        [{name:'重庆'}, {name:'银川'}],
+        [{name:'重庆'}, {name:'拉萨'}],
+        [{name:'重庆'}, {name:'西宁'}],
+        [{name:'重庆'}, {name:'昆明'}],
+        [{name:'重庆'}, {name:'贵阳'}],
+        [{name:'重庆'}, {name:'成都'}],
+        [{name:'重庆'}, {name:'兰州'}],
+        [{name:'重庆'}, {name:'西安'}],
+
+        [{name:'深圳'}, {name:'深圳',value:100}],
+        [{name:'深圳'}, {name:'上海',value:40}],
+        [{name:'深圳'}, {name:'深圳',value:100}],
+        [{name:'深圳'}, {name:'北京',value:40}],
+        [{name:'深圳'}, {name:'宜昌',value:40}],
+        [{name:'深圳'}, {name:'南昌',value:40}],
+        [{name:'深圳'}, {name:'重庆',value:40}],
+        [{name:'深圳'}, {name:'广州'}],
+        [{name:'深圳'}, {name:'南宁'}],
+        [{name:'深圳'}, {name:'福州'}],
+        [{name:'深圳'}, {name:'海口'}],
+        [{name:'深圳'}, {name:'香港'}],
+        [{name:'深圳'}, {name:'厦门'}]
     ];
 
-    var GZData = [
-        [{name:'武汉'}, {name:'武汉',value:100}],
-        [{name:'武汉'}, {name:'上海',value:80}],
-        [{name:'武汉'}, {name:'深圳',value:80}],
-        [{name:'武汉'}, {name:'香港',value:80}],
-        [{name:'武汉'}, {name:'北京',value:80}],
-        [{name:'武汉'}, {name:'宜昌',value:80}],
-        [{name:'武汉'}, {name:'大连',value:80}],
-        [{name:'武汉'}, {name:'南昌',value:80}],
-        [{name:'武汉'}, {name:'重庆',value:80}]
-    ];
 
     var planePath = 'path://M1705.06,1318.313v-89.254l-319.9-221.799l0.073-208.063c0.521-84.662-26.629-121.796-63.961-121.491c-37.332-0.305-64.482,36.829-63.961,121.491l0.073,208.063l-319.9,221.799v89.254l330.343-157.288l12.238,241.308l-134.449,92.931l0.531,42.034l175.125-42.917l175.125,42.917l0.531-42.034l-134.449-92.931l12.238-241.308L1705.06,1318.313z';
 
@@ -173,10 +387,11 @@ function affiliateV3(arr) {
 
     var color = ['#46bee9', '#46bee9', '#46bee9'];
     var series = [];
-    [['1998', BJData], ['2013', SHData], ['2018', GZData]].forEach(function (item, i) {
+    [['2000', Data2000], ['2010', Data2010],['2012', Data2012],['2013', Data2013],['2014', Data2014], ['2017', Data2017]].forEach(function (item, i) {
         series.push({
-                name: item[0] + ' 武汉信用',
+                name: '武汉信用（' + item[0] + '年）',
                 type: 'lines',
+                coordinateSystem: 'bmap',
                 zlevel: 1,
                 effect: {
                     show: true,
@@ -187,7 +402,7 @@ function affiliateV3(arr) {
                 },
                 lineStyle: {
                     normal: {
-                        color: color[i],
+                        color: '#46bee9',
                         width: 0,
                         curveness: 0.2
                     }
@@ -195,8 +410,9 @@ function affiliateV3(arr) {
                 data: convertData(item[1])
             },
             {
-                name: item[0] + ' 武汉信用',
+                name: '武汉信用（' + item[0] + '年）',
                 type: 'lines',
+                coordinateSystem: 'bmap',
                 zlevel: 2,
                 symbol: ['none', 'arrow'],
                 symbolSize: 10,
@@ -209,7 +425,7 @@ function affiliateV3(arr) {
                 },
                 lineStyle: {
                     normal: {
-                        color: color[i],
+                        color: '#46bee9',
                         width: 1,
                         opacity: 0.6,
                         curveness: 0.2
@@ -218,9 +434,9 @@ function affiliateV3(arr) {
                 data: convertData(item[1])
             },
             {
-                name: item[0] + ' 武汉信用',
+                name: '武汉信用（' + item[0] + '年）',
                 type: 'effectScatter',
-                coordinateSystem: 'geo',
+                coordinateSystem: 'bmap',
                 zlevel: 2,
                 rippleEffect: {
                     brushType: 'stroke'
@@ -233,11 +449,11 @@ function affiliateV3(arr) {
                     }
                 },
                 symbolSize: function (val) {
-                    return val[2] / 8;
+                    return val[2] / 6;
                 },
                 itemStyle: {
                     normal: {
-                        color: color[i]
+                        color: '#46bee9'
                     }
                 },
                 data: item[1].map(function (dataItem) {
@@ -256,7 +472,7 @@ function affiliateV3(arr) {
             // subtext: '数据纯属虚构',
             left: 'center',
             textStyle : {
-                color: '#46bee9'
+                color: '#ff0000'
             }
         },
         tooltip : {
@@ -266,32 +482,161 @@ function affiliateV3(arr) {
             orient: 'vertical',
             top: 'top',
             left: 'left',
-            data:['1998 武汉信用', '2013 武汉信用', '2018 武汉信用'],
+            data:['武汉信用（2000年）', '武汉信用（2010年）','武汉信用（2012年）','武汉信用（2013年）','武汉信用（2014年）', '武汉信用（2017年）'],
             textStyle: {
                 color: '#fff'
             },
             selectedMode: 'single'
         },
-        geo: {
-            map: 'china',
-            label: {
-                emphasis: {
-                    show: false
-                }
-            },
+        dataRange: {
+            min: 0,
+            max: 100,
+            x: 'right',
+            calculable: true,
+            color: ['#ff3333', 'orange', 'yellow', 'lime', 'aqua'],
+            textStyle: {
+                color: '#fff'
+            }
+        },
+        bmap: {
+            center: [109.1162,34.2004],
+            zoom: 5,
             roam: false,
-            itemStyle: {
-                normal: {
-                    areaColor: '#323c48',
-                    borderColor: '#404a59'
-                },
-                emphasis: {
-                    areaColor: '#2a333d'
-                }
+            mapStyle: {
+                styleJson: [
+                    {
+                        "featureType": "water",
+                        "elementType": "all",
+                        "stylers": {
+                            "color": "#044161"
+                        }
+                    },
+                    {
+                        "featureType": "land",
+                        "elementType": "all",
+                        "stylers": {
+                            "color": "#004981"
+                        }
+                    },
+                    {
+                        "featureType": "boundary",
+                        "elementType": "geometry",
+                        "stylers": {
+                            "color": "#064f85"
+                        }
+                    },
+                    {
+                        "featureType": "railway",
+                        "elementType": "all",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "highway",
+                        "elementType": "geometry",
+                        "stylers": {
+                            "color": "#004981"
+                        }
+                    },
+                    {
+                        "featureType": "highway",
+                        "elementType": "geometry.fill",
+                        "stylers": {
+                            "color": "#005b96",
+                            "lightness": 1
+                        }
+                    },
+                    {
+                        "featureType": "highway",
+                        "elementType": "labels",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "arterial",
+                        "elementType": "geometry",
+                        "stylers": {
+                            "color": "#004981"
+                        }
+                    },
+                    {
+                        "featureType": "arterial",
+                        "elementType": "geometry.fill",
+                        "stylers": {
+                            "color": "#00508b"
+                        }
+                    },
+                    {
+                        "featureType": "poi",
+                        "elementType": "all",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "green",
+                        "elementType": "all",
+                        "stylers": {
+                            "color": "#056197",
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "subway",
+                        "elementType": "all",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "manmade",
+                        "elementType": "all",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "local",
+                        "elementType": "all",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "arterial",
+                        "elementType": "labels",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "boundary",
+                        "elementType": "geometry.fill",
+                        "stylers": {
+                            "color": "#029fd4"
+                        }
+                    },
+                    {
+                        "featureType": "building",
+                        "elementType": "all",
+                        "stylers": {
+                            "color": "#1a5787"
+                        }
+                    },
+                    {
+                        "featureType": "label",
+                        "elementType": "all",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    }
+                ]
             }
         },
         series: series
-    };;
+    };
     if (option && typeof option === "object") {
         myChart.setOption(option, true);
     }
@@ -299,4 +644,4 @@ function affiliateV3(arr) {
 
 module.exports = {
     affiliateV3: affiliateV3
-}
+};

@@ -449,6 +449,11 @@ function chinaMapV3(arr) {
                 }
             }
         },
+        bmap: {
+            center: [115.97, 29.71],
+            zoom: 5,
+            roam: true
+        },
         series: series
     };
 
