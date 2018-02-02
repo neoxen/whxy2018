@@ -259,6 +259,7 @@ option = {
                 normal: {
                     show: true,
                     position: 'right',
+                    fontSize: 20,
                     offset: [5, 0],
                     formatter: '{b}'
                 },
@@ -385,8 +386,19 @@ var interval = setInterval(function () {
             {
             center: locations[currentLoc].coord,
             zoom: 4,
+            label: {
+                show: true,
+                fontSize: 20
+            },
+            emphasis: {
+                itemStyle: {
+                    areaColor: '#99CCFF'
+                }
+            },
             data:[
-                {name: locations[currentLoc].name, selected: true}
+                {name: locations[currentLoc].name, selected: true,itemStyle: {
+                        areaColor: '#99CCFF'
+                    },}
             ],
             animationDurationUpdate: 1000,
             animationEasingUpdate: 'cubicInOut'
@@ -401,30 +413,24 @@ var interval = setInterval(function () {
                 {
                     center: [109.1162,34.2004],
                     zoom: 1,
-                    data:[
-                        {name: locations[0].name, selected: true},
-                        {name: locations[1].name, selected: true},
-                        {name: locations[2].name, selected: true},
-                        {name: locations[3].name, selected: true},
-                        {name: locations[4].name, selected: true},
-                        {name: locations[5].name, selected: true},
-                        {name: locations[6].name, selected: true},
-                        {name: locations[7].name, selected: true},
-                        {name: locations[8].name, selected: true},
-                        {name: locations[9].name, selected: true},
-                        {name: locations[10].name, selected: true},
-                        {name: locations[11].name, selected: true},
-                        {name: locations[12].name, selected: true},
-                        {name: locations[13].name, selected: true},
-                        {name: locations[14].name, selected: true},
-                        {name: locations[15].name, selected: true},
-                        {name: locations[16].name, selected: true},
-                        {name: locations[17].name, selected: true},
-                        {name: locations[18].name, selected: true},
-                        {name: locations[19].name, selected: true},
-                        {name: locations[20].name, selected: true},
-                        {name: locations[21].name, selected: true},
-                    ],
+                    label: {
+                        show: true,
+                        fontSize: 12
+                    },
+                    emphasis: {
+                      itemStyle: {
+                          areaColor: 'red'
+                      }
+                    },
+                    data: locations.map(function(item){
+                        return {
+                            name: item.name,
+                            selected: true,
+                            itemStyle: {
+                                areaColor: '#99CCFF'
+                            }
+                        };
+                    }),
                     animationDurationUpdate: 1000,
                     animationEasingUpdate: 'cubicOut'
                 }
